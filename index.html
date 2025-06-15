@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>にんケット　改善アイデア募集！</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEwMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBmaWxsPSIjNENBRjUwIiByeD0iMTAiLz4KPHR4dCB4PSI1MCIgeT0iNTUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7jgavjgpM8L3R4dD4KPC9zdmc+" alt="にんケットロゴ" class="logo">
+        <h1>にんケットお疲れさまでした！</h1>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <p class="message">
+                            同人即売会イベント「にんケット」の公式サイトです。<br>
+                            改善提案の募集と、にんケット2026の参加申込を受け付けています。
+                        </p>
+                    </div>
+                    <div class="hero-image">
+                        <img src="img/img.png" alt="にんケットイベント画像" class="hero-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-selector">
+            <div class="container">
+                <div class="form-tabs">
+                    <button class="tab-button active" onclick="showForm('feedback')">改善アイデア募集</button>
+                    <button class="tab-button" onclick="showForm('participation')">にんケット2026 参加申込</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="feedback-form" class="form-section active">
+            <div class="container">
+                <div class="form-header">
+                    <h2>改善アイデア募集</h2>
+                    <p>次回開催をさらに楽しいものにするため、スタッフ & 参加者のみなさんからのご意見・ご提案を募集中です。小さな気づきでも大歓迎。どうぞお気軽にお寄せください！</p>
+                </div>
+                <div class="form-wrapper">
+                    <iframe 
+                        src="https://docs.google.com/forms/d/e/1FAIpQLSd3KcNgW8mMFl7ro3M77aclEfnac7FHKvx3e8UiaKqI0BlWUw/viewform?embedded=true" 
+                        width="100%" 
+                        height="800" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        title="にんケット改善提案フォーム">
+                        読み込んでいます…
+                    </iframe>
+                    
+                    <div class="fallback-link">
+                        <p>フォームが表示されない場合は、<a href="https://docs.google.com/forms/d/e/1FAIpQLSd3KcNgW8mMFl7ro3M77aclEfnac7FHKvx3e8UiaKqI0BlWUw/viewform" target="_blank" rel="noopener noreferrer">こちらのリンク</a>からアクセスしてください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="participation-form" class="form-section">
+            <div class="container">
+                <div class="form-header">
+                    <h2>にんケット2026 参加申込</h2>
+                    <p>来年開催予定の「にんケット2026」への参加をご希望の方は、こちらのフォームからお申し込みください。皆様のご参加をお待ちしております！</p>
+                </div>
+                <div class="form-wrapper">
+                    <iframe 
+                        src="https://mag.ikehaya.com/p/r/5lYBoaTm" 
+                        width="100%" 
+                        height="800" 
+                        frameborder="0" 
+                        marginheight="0" 
+                        marginwidth="0"
+                        title="にんケット2026参加希望者フォーム">
+                        読み込んでいます…
+                    </iframe>
+                    
+                    <div class="fallback-link">
+                        <p>フォームが表示されない場合は、<a href="https://mag.ikehaya.com/p/r/5lYBoaTm" target="_blank" rel="noopener noreferrer">こちらのリンク</a>からアクセスしてください。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 NinKET Committee. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showForm(formType) {
+            const forms = document.querySelectorAll('.form-section');
+            forms.forEach(form => form.classList.remove('active'));
+            
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+            
+            const targetForm = document.getElementById(formType + '-form');
+            if (targetForm) {
+                targetForm.classList.add('active');
+            }
+            
+            const targetButton = event.target;
+            targetButton.classList.add('active');
+        }
+    </script>
+</body>
+</html>
